@@ -1,0 +1,9 @@
+---
+rabbitmq_user           : "admin"
+rabbitmq_password       : "admin"
+rabbitmq_nodename       : "rabbitmq"
+rabbitmq_ip_adress      : "{{ ansible_eth0.ipv4.address }}"
+rabbitmq_node_port      : 5672
+cookie                  : "cookie"
+item                    : "rabbitmq-server"
+

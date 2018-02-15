@@ -1,0 +1,49 @@
+---
+
+- name: register rabbitmq-server service status
+  command: systemctl status rabbitmq-server
+  ignore_errors: yes
+  register: service_rabbitmq_status
+  tags:
+  - skip_ansible_lint
+
+- name: Report status of rabbitmq-server if service not running
+  fail:
+    msg: |
+      {{ service_rabbitmq_status.stderr }}
+  when: service_rabbitmq_status.stdout.find("running") == -1
+
+- name: Report status of rabbitmq-server if service not enabled
+  fail:
+    msg: |
+      {{ service_rabbitmq_status.stderr }}
+  when: service_rabbitmq_status.stdout.find("disabled") != -1
+
+
+- name: "Check if rabbitmq is listening on port {{ rabbitmq_node_port }} on interface {{ rabbitmq_ip_adress }}"
+  wait_for:
+   port: "{{ rabbitmq_node_port }}"
+   host: "{{ rabbitmq_ip_adress }}"
+   timeout: 1
+
+- name: Find all logs files
+  find:
+    paths: /var/log/rabbitmq
+    recurse: yes
+  register: logs_files
+
+- name: Get stat to all rabbitmq log files
+  stat:
+    path: "{{ item.path }}"
+  register: logs_stats
+  with_items: "{{logs_files.files }}"
+
+- name: Check ownership off all logs files
+  fail:
+    msg: "file {{ item.stat.path }} doesn't have rabbitmq ownership"
+  with_items : "{{ logs_stats.results }}"
+  when: item.stat.pw_name != 'rabbitmq'
+
+# plugin binding OK
+# user exist
+# admin plugin curl OK

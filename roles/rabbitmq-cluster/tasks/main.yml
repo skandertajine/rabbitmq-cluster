@@ -5,17 +5,17 @@
     - install
     - rabbitmq-install
 
-- import_tasks: plugin.yml 
-  tags:
-    - rabbitmq
-    - plugin
-    - rabbitmq-plugin
 
 - import_tasks: cluster.yml
   tags:
      - rabbitmq
      - cluster
-
+     
+- import_tasks: plugin.yml 
+  tags:
+    - rabbitmq
+    - plugin
+    - rabbitmq-plugin
 
 - import_tasks: users.yml
   tags:

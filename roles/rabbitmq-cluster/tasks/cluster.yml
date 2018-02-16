@@ -9,7 +9,7 @@
   
 
 - name : cookie
-  shell :echo "skander" >/var/lib/rabbitmq/.erlang.cookie
+  shell: echo "skander" >/var/lib/rabbitmq/.erlang.cookie
 
   
 - name: Template rabbitmq configuration file

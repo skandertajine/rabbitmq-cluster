@@ -25,7 +25,7 @@
 - name: starting rabbitmq app
   command: rabbitmqctl start_app
   become: true
-  notify : "Restart RabbitMQ"
+
   
-- name: force handler s execution , not waiting for normal sync points
-  meta: flush_handlers
+- name: Make sure a rabbitmq-server service is running
+  systemd: state=started name=rabbimq-server

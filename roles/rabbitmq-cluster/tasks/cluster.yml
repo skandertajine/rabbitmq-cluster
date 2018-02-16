@@ -6,7 +6,16 @@
 - name: resetting rabbitmq app
   command: rabbitmqctl reset
   become: true
-
+  
+- name: setting erlang cookie
+  template:
+    src: "erlang.cookie.j2"
+    dest: /var/lib/rabbitmq/.erlang.cookie
+    owner: "rabbitmq"
+    group: "rabbitmq"
+    mode: 0400
+  become: true
+  
 - name: Template rabbitmq configuration file
   template:
     src: rabbitmq.config.j2

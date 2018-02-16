@@ -25,10 +25,10 @@
 
 
 
-# - import_tasks: cluster.yml
-#   tags:
-#     - rabbitmq
-#     - cluster
+- import_tasks: cluster.yml
+   tags:
+     - rabbitmq
+     - cluster
 
 
 - import_tasks: users.yml

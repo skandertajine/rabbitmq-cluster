@@ -7,14 +7,10 @@
   command: rabbitmqctl reset
   become: true
   
-- name: setting erlang cookie
-  template:
-    src: "erlang.cookie.j2"
-    dest: /var/lib/rabbitmq/.erlang.cookie
-    owner: "rabbitmq"
-    group: "rabbitmq"
-    mode: 0400
-  become: true
+
+- name : cookie
+  shell :echo "skander" >/var/lib/rabbitmq/.erlang.cookie
+
   
 - name: Template rabbitmq configuration file
   template:

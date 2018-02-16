@@ -16,15 +16,6 @@
     - rabbitmq
     - configure
 
-
-- import_tasks: ha-policy.yml
-  tags:
-    - rabbitmq
-    - cluster
-    - high availability
-
-
-
 - import_tasks: cluster.yml
   tags:
      - rabbitmq
@@ -36,4 +27,9 @@
     - rabbitmq
     - user
 
+- import_tasks: ha-policy.yml
+  tags:
+    - rabbitmq
+    - cluster
+    - high availability
 

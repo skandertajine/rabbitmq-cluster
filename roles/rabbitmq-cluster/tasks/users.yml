@@ -6,5 +6,6 @@
     configure_priv: .*
     read_priv: .*
     write_priv: .*
+    tags : administrator
     state: present
 

@@ -26,7 +26,7 @@
 
 
 - import_tasks: cluster.yml
-   tags:
+  tags:
      - rabbitmq
      - cluster
 

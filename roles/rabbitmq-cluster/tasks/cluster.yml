@@ -24,4 +24,4 @@
 
   
 - name: Make sure a rabbitmq-server service is running
-  systemd: state=started name=rabbimq-server
+  systemd: state=started name=rabbitmq-server

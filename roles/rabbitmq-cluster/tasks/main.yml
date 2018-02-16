@@ -11,11 +11,6 @@
     - plugin
     - rabbitmq-plugin
 
-- import_tasks: erlang.yml
-  tags:
-    - rabbitmq
-    - configure
-
 - import_tasks: cluster.yml
   tags:
      - rabbitmq

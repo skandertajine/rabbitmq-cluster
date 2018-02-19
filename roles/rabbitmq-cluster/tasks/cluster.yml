@@ -11,9 +11,15 @@
   systemd: state=stopped name=rabbitmq-server
   
 - name: Cookie Configuration
-  shell: echo "skander"> /var/lib/rabbitmq/.erlang.cookie
-
-
+  template:
+     src: .erlang.cookie.j2
+     dest: /var/lib/rabbitmq/.erlang.cookie
+     owner: rabbitmq
+     group: rabbitmq
+     mode: 0400
+     force : no 
+  notify : Restart RabbitMQ
+  
 - name: Rabbitmq Service configuration
   template:
      src: rabbitmq.config.j2

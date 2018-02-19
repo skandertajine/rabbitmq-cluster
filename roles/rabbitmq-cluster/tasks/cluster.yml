@@ -13,13 +13,8 @@
 - name : cookie
   shell: echo "skander" >/var/lib/rabbitmq/.erlang.cookie
 
-
-
 - name : config
   shell: echo "[{rabbit,[{cluster_nodes,{[ 'rabbit@rabbitmq-0','rabbit@rabbitmq-1','rabbit@rabbitmq-2'],disc}}]}].">/etc/rabbitmq/rabbitmq.config
-  
-  
- 
   
 - name: force handler s execution , not waiting for normal sync points
   meta: flush_handlers

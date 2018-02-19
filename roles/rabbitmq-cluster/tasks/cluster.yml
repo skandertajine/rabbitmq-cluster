@@ -7,7 +7,9 @@
   command: rabbitmqctl reset
   become: true
   
-
+- name: stopping rabbitmq service
+  systemd: state=stopped name=rabbitmq-server
+  
 - name : cookie
   shell: echo "skander" >/var/lib/rabbitmq/.erlang.cookie
 

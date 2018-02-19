@@ -2,3 +2,8 @@
   become                    : true 
   roles:
     - rabbitmq-cluster
+  vars :
+    rabbitmq_user           : "admin"
+    rabbitmq_password       : "admin"
+    rabbitmq_nodename       : "rabbitmq"
+    cookie                  : "ThisIsATremendousCookie"

@@ -22,7 +22,7 @@
     group: rabbitmq
     mode: 0644
     force : no 
-    notify : Restart RabbitMQ
+  notify : Restart RabbitMQ
   
   
 

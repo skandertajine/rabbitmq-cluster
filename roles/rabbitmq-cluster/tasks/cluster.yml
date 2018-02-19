@@ -12,7 +12,7 @@
   
 - name: Cookie Configuration
   template:
-     src: .erlang.cookie.j2
+     src: erlang.cookie.j2
      dest: /var/lib/rabbitmq/.erlang.cookie
      owner: rabbitmq
      group: rabbitmq

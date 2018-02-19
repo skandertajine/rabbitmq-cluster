@@ -17,7 +17,7 @@
      owner: rabbitmq
      group: rabbitmq
      mode: 0400 
-   notify : Restart RabbitMQ
+  notify : Restart RabbitMQ
 
 - name: Rabbitmq Service configuration
   template:
@@ -27,7 +27,7 @@
      group: rabbitmq
      mode: 0644
      force : no 
-   notify : Restart RabbitMQ
+  notify : Restart RabbitMQ
 
 - name: force handler s execution , not waiting for normal sync points
   meta: flush_handlers

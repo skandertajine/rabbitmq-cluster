@@ -1,4 +1,4 @@
-# Project Title
+# Rabbitmq Cluster w/ Ansible + Terraform
 
 One Paragraph of project description goes here
 
@@ -29,7 +29,36 @@ And repeat
 ```
 until finished
 ```
-
+# Configuration
+## ???
+### Cluster configuration schema
+ 
+ You can choose the number of clustered rabbitmq's nodes by changing this parameter below :
+    
+    
+Examples: 
+  - 3 Rabitmq Nodes in cluster : 
+      rabbitmq_cluster_nodes  : "[
+                               'rabbit@{{ rabbitmq_nodename }}-0' ,
+                               'rabbit@{{ rabbitmq_nodename }}-1' ,
+                               'rabbit@{{ rabbitmq_nodename }}-2'
+                               ]"
+ - 2 Rabitmq Nodes in cluster : 
+      rabbitmq_cluster_nodes  : "[
+                               'rabbit@{{ rabbitmq_nodename }}-0' ,
+                               'rabbit@{{ rabbitmq_nodename }}-1' ,
+                               ]"
+    
+The parameter's configuration schema is :
+      rabbitmq_cluster_nodes  : "[
+                               'rabbit@{{ rabbitmq_nodename }}-ID',
+                               'rabbit@{{ rabbitmq_nodename }}-ID',
+                               'rabbit@{{ rabbitmq_nodename }}-ID',
+                               ]"
+                               
+      - 'rabbit@' is required by the rabbitmq clustering controller.
+      - Simple quotes also is required.
+      - Jinja adds a "u" symbol when double quotes " " cercling the [array] are missing. 
 End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
@@ -72,7 +101,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Skander Tajine** - *Initial work* - [skandertajine](https://github.com/skandertajine)
+* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 

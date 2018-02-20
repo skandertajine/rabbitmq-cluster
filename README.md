@@ -13,6 +13,25 @@ The node's exchange data is mirrored and real-time synchronized between the node
 
 ## Getting Started
 # Configuration
+## Main configuration
+```yaml
+rabbitmq_user           : "@changeme@"
+rabbitmq_password       : "@changeme@"
+cookie                  : "@changeme@" #see 'Cluster Security and authentification management' for further information about clustering
+
+rabbitmq_nodename       : "rabbitmq"
+rabbitmq_ip_adress      : "{{ ansible_eth0.ipv4.address }}"
+rabbitmq_node_port      : 5672
+item                    : "rabbitmq-server"
+
+rabbitmq_cluster_nodes  : ['rabbit@{{ rabbitmq_nodename }}-0'] #see 'Cluster configuration schema' for further information about clustering
+```
+  ## Cluster Security and authentification management
+  
+  The cluster nodes uses a cookie string to ensure authentification between each other.
+  The cookie will be typically located in /var/lib/rabbitmq/.erlang.cookie and it must be identical within all nodes.
+  
+ 
   ## Cluster configuration schema
  
  You can choose the number of clustered rabbitmq's nodes by changing the parameter below :
@@ -53,7 +72,8 @@ End with an example of getting some data out of the system or using it for a lit
  ```
 ## Running the tests
 ## Deployment
-
+## Troubleshooting
+Sometimes Rabbitmq(service rabbitmq-server ) doesn't want to start , it maybe sometimes caused by a wrong character in the cookie file.
 ## Built With
 * [Ansible](https://www.ansible.com) - Configuration Manager
 * [Terraform](https://www.terraform.io) - Infrastructure as code.

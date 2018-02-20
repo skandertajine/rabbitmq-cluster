@@ -3,7 +3,7 @@
         [
             {cluster_nodes, 
                 {
-                    {{ rabbitmq_cluster_nodes }}, 
+                    {{ rabbitmq_cluster_nodes | to_json }}, 
                     disc
                 }
             }

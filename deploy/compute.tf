@@ -24,7 +24,7 @@ resource "google_compute_instance" "noeud" {
   } 
   boot_disk { 
         initialize_params {
-          image           = "rabbitmq-${var.image_version}"  //Packerized
+          image           = "${image_version}"
           size            = 10         
           type            = "${var.disk_type}"
           }

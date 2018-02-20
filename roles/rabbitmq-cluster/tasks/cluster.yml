@@ -17,7 +17,6 @@
      owner: rabbitmq
      group: rabbitmq
      mode: 0400
-     force : no 
   notify : Restart RabbitMQ
   
 - name: Rabbitmq Service configuration

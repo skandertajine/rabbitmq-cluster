@@ -7,7 +7,7 @@ variable name {
    default     = "rabbitmq"
 }
 variable image_version {
-  description = "Version de l image Packerisee"
+  description = "Version de l image source a utiliser"
   default     = "https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-9-stretch-v20180206"
 }
 variable count {

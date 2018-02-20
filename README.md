@@ -68,7 +68,6 @@ rabbitmq_cluster_nodes  : "[
 'rabbit@' is required by the rabbitmq clustering controller.
 Simple quotes also is required.
 Jinja adds a "u" symbol when double quotes " " cercling the [array] are missing. 
-End with an example of getting some data out of the system or using it for a little demo
  ```
 ## Running the tests
 ## Deployment.
@@ -82,5 +81,5 @@ It will require credentials to login , use "rabbitmq_user" and "rabbitmq_passwor
 ## Troubleshooting
 ```
 * Sometimes Rabbitmq(service rabbitmq-server ) doesn't want to start , it maybe sometimes caused by a wrong character in the cookie file.
-* Rabbitmq binds it's configuration with the current context(hostname, IP etc..) if one of theese has come to change the node can be instable and configuration may disappear.
+* Rabbitmq binds it's configuration with the current context (hostname, IP etc..) ,if one of theese has come to change the node can be instable and configuration may disappear.
 * rabbitmqctl reset deletes the configuration of the node(policies,users etc..)

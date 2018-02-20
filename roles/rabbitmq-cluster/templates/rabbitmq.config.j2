@@ -3,7 +3,7 @@
         [
             {cluster_nodes, 
                 {
-                    {{ rabbitmq_cluster_nodes | to_json }}, 
+                    {{ rabbitmq_cluster_nodes.format("utf-8") }}, 
                     disc
                 }
             }

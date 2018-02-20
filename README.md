@@ -71,7 +71,9 @@ Jinja adds a "u" symbol when double quotes " " cercling the [array] are missing.
 End with an example of getting some data out of the system or using it for a little demo
  ```
 ## Running the tests
-## Deployment
+## Deployment.
+To do so we use Terraform to deploy the architecture.
+Use terraform plan and terraform apply in the Deploy directory in order to deploy the pre-configured infrastructure.
 ## Monitoring
 Rabbitmq's management plugin is already installed accesible locally via the loadbalancing IP:15672.
 It will require credentials to login , use "rabbitmq_user" and "rabbitmq_password" precedently configured.

@@ -5,7 +5,7 @@ Rabbitmq is a message broker, used to share messages throughout the network.
 By now this role installs a pre-configured cluster of rabbitmq's instances on GCP with a default user and the administration plugin.
 
 ## Architecture
-![alt text](https://github.com/skandertajine/rabbitmq-cluster/blob/master/images/architecture.png)
+![alt text](https://github.com/skandertajine/rabbitmq-cluster/blob/master/images/archi.png)
 ## Data persistancy 
 
 The node's exchange data is mirrored and real-time synchronized between the nodes so that in case of interruption (desired or not) of one or multiple nodes , it ( the data ) is always(SLA xx,xxx%) safly persisted in the remaning alive node.

@@ -1,6 +1,6 @@
 # Rabbitmq Cluster w/ Terraform & Ansible
 
-Rabbitmq is a message broker, used to share messages throught the network.
+Rabbitmq is a message broker, used to share messages throughout the network.
 
 By now this role installs a pre-configured cluster of rabbitmq's instances on GCP with a default user and the administration plugin.
 

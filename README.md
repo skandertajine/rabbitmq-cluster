@@ -28,7 +28,7 @@ rabbitmq_cluster_nodes  : ['rabbit@{{ rabbitmq_nodename }}-0'] #see 'Cluster con
 ```
   ### Cluster Security and authentification management
   
-  The cluster nodes uses a cookie string to ensure authentification between each other.
+  The cluster nodes uses a cookie string to ensure authentification to each other.
   The cookie will be typically located in ```/var/lib/rabbitmq/.erlang.cookie``` and it must be identical within all nodes.
   
  
@@ -80,4 +80,7 @@ It will require credentials to login , use "rabbitmq_user" and "rabbitmq_passwor
 
 ![alt text](https://github.com/skandertajine/rabbitmq-cluster/blob/master/images/managementpluging.png)
 ## Troubleshooting
-Sometimes Rabbitmq(service rabbitmq-server ) doesn't want to start , it maybe sometimes caused by a wrong character in the cookie file.
+```
+* Sometimes Rabbitmq(service rabbitmq-server ) doesn't want to start , it maybe sometimes caused by a wrong character in the cookie file.
+* Rabbitmq binds it's configuration with the current context(hostname, IP etc..) if one of theese has come to change the node can be instable and configuration may disappear.
+* rabbitmqctl reset deletes the configuration of the node(policies,users etc..)

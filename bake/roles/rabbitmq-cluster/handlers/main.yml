@@ -1,0 +1,7 @@
+---
+- name: Restart RabbitMQ
+  systemd:
+    daemon_reload: yes
+    state: restarted
+    name: rabbitmq-server
+    enabled: true

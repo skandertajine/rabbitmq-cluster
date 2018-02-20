@@ -1,0 +1,40 @@
+---
+- name: stopping rabbitmq app
+  command: rabbitmqctl stop_app
+  become: true
+
+- name: resetting rabbitmq app
+  command: rabbitmqctl reset
+  become: true
+  
+- name: stopping rabbitmq service
+  systemd: state=stopped name=rabbitmq-server
+  
+- name: Cookie Configuration
+  template:
+     src: erlang.cookie.j2
+     dest: /var/lib/rabbitmq/.erlang.cookie
+     owner: rabbitmq
+     group: rabbitmq
+     mode: 0400
+  notify : Restart RabbitMQ
+  
+- name: Rabbitmq Service configuration
+  template:
+     src: rabbitmq.config.j2
+     dest: /etc/rabbitmq/rabbitmq.config
+     owner: rabbitmq
+     group: rabbitmq
+     mode: 0644
+     force : no 
+  notify : Restart RabbitMQ
+
+- name: force handler s execution , not waiting for normal sync points
+  meta: flush_handlers
+
+- name: Make sure a rabbitmq-server service is running
+  systemd: state=started name=rabbitmq-server
+  
+- name: starting rabbitmq app
+  command: rabbitmqctl start_app
+  become: true

@@ -1,0 +1,30 @@
+---
+- import_tasks: install.yml
+  tags:
+    - rabbitmq
+    - install
+    - rabbitmq-install
+
+
+- import_tasks: cluster.yml
+  tags:
+     - rabbitmq
+     - cluster
+     
+- import_tasks: plugin.yml 
+  tags:
+    - rabbitmq
+    - plugin
+    - rabbitmq-plugin
+
+- import_tasks: users.yml
+  tags:
+    - rabbitmq
+    - user
+
+- import_tasks: ha-policy.yml
+  tags:
+    - rabbitmq
+    - cluster
+    - high availability
+

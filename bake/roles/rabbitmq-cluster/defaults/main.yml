@@ -1,0 +1,12 @@
+---
+rabbitmq_user           : "@changeme@"
+rabbitmq_password       : "@changeme@"
+cookie                  : "@changeme@"
+
+rabbitmq_nodename       : "rabbitmq"
+rabbitmq_ip_adress      : "{{ ansible_eth0.ipv4.address }}"
+rabbitmq_node_port      : 5672
+item                    : "rabbitmq-server"
+
+rabbitmq_cluster_nodes  : ['rabbit@{{ rabbitmq_nodename }}-0']
+

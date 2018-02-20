@@ -2,7 +2,7 @@
 # Configuration
   ## Cluster configuration schema
  
- You can choose the number of clustered rabbitmq's nodes by changing this parameter below :
+ You can choose the number of clustered rabbitmq's nodes by changing the parameter below :
 ### Schema :
 The parameter's configuration schema is :
 ```yaml

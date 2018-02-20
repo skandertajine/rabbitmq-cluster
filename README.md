@@ -1,5 +1,5 @@
 
-    Cluster configuration schema
+    #Cluster configuration schema
     You can choose the number of clustered rabbitmq's nodes by changing this parameter below :
     
     

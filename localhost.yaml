@@ -7,9 +7,9 @@
     rabbitmq_password       : admin
     rabbitmq_nodename       : rabbitmq
     cookie                  : ThisIsATremendousCookie
-    rabbitmq_cluster_nodes  : [
+    rabbitmq_cluster_nodes  : "[
                                'rabbit@{{ rabbitmq_nodename }}-0' ,
                                'rabbit@{{ rabbitmq_nodename }}-1' ,
                                'rabbit@{{ rabbitmq_nodename }}-2'
-                               ]
+                               ]"
     

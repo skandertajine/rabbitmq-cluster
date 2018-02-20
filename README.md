@@ -13,7 +13,22 @@ The node's exchange data is mirrored and real-time synchronized between the node
 
 ## Getting Started
 ## Configuration
-### Main configuration
+### Infrastructure configuration
+File Location : /deploy/terraform.tfvars
+Change these values to customise your infrastructure.
+```tfvars
+zone  = "europe-west1-c"
+count = 3 #This count has to be the same as the cluster nodes configuration below ( File Location : /bake/localhost.yaml)
+vm_type = "n1-standard-1"
+variable region = "europe-west1" 
+network = "default"
+project  = "skale-5"
+target_tags=["skander"]
+firewall_project= "skale-5"
+```
+
+### Node configuration
+File Location : /bake/localhost.yaml
 ```yaml
 rabbitmq_user           : "@changeme@"
 rabbitmq_password       : "@changeme@"
@@ -27,13 +42,13 @@ item                    : "rabbitmq-server"
 rabbitmq_cluster_nodes  : ['rabbit@{{ rabbitmq_nodename }}-0'] #see 'Cluster configuration schema' for further information about clustering
 ```
   ### Cluster Security and authentification management
-  
+  File Location : /bake/localhost.yaml
   The cluster nodes uses a cookie string to ensure authentification to each other.
   The cookie will be typically located in ```/var/lib/rabbitmq/.erlang.cookie``` and it must be identical within all nodes.
   
  
   ### Cluster configuration schema
- 
+  File Location : /bake/localhost.yaml
  You can choose the number of clustered rabbitmq's nodes by changing the parameter below :
 #### Schema :
 The parameter's configuration schema is :

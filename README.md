@@ -72,6 +72,9 @@ End with an example of getting some data out of the system or using it for a lit
  ```
 ## Running the tests
 ## Deployment
+## Monitoring
+Rabbitmq's management plugin is already installed accesible locally via the loadbalancing IP:15672.
+It will require credentials to login , use "rabbitmq_user" and "rabbitmq_password" precedently configured.
 ## Troubleshooting
 Sometimes Rabbitmq(service rabbitmq-server ) doesn't want to start , it maybe sometimes caused by a wrong character in the cookie file.
 ## Built With

@@ -5,7 +5,7 @@ Rabbitmq is a message broker, used to share messages throughout the network.
 By now this role installs a pre-configured cluster of rabbitmq's instances on GCP with a default user and the administration plugin.
 
 ## Architecture
-![alt text](https://github.com/skandertajine/rabbitmq-cluster/blob/master/bake/images/architecture.png)
+![alt text](https://github.com/skandertajine/rabbitmq-cluster/blob/master/images/architecture.png)
 ## Data persistancy 
 
 The node's exchange data is mirrored and real-time synchronized between the nodes so that in case of interruption (desired or not) of one or multiple nodes , it ( the data ) is always(SLA xx,xxx%) safly persisted in the remaning alive node.
@@ -78,6 +78,6 @@ Use terraform plan and terraform apply in the Deploy directory in order to deplo
 Rabbitmq's management plugin is already installed accesible locally via the loadbalancing IP:15672.
 It will require credentials to login , use "rabbitmq_user" and "rabbitmq_password" precedently configured.
 
-![alt text](https://github.com/skandertajine/rabbitmq-cluster/blob/master/bake/images/managementpluging.png)
+![alt text](https://github.com/skandertajine/rabbitmq-cluster/blob/master/images/managementpluging.png)
 ## Troubleshooting
 Sometimes Rabbitmq(service rabbitmq-server ) doesn't want to start , it maybe sometimes caused by a wrong character in the cookie file.

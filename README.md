@@ -15,6 +15,7 @@ The node's exchange data is mirrored and real-time synchronized between the node
 ## Configuration
 ### Infrastructure configuration
 File Location : /deploy/terraform.tfvars
+
 Change these values to customise your infrastructure.
 ```tfvars
 zone  = "europe-west1-c"

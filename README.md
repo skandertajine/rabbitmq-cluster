@@ -5,7 +5,7 @@ Rabbitmq is a message broker, used to share messages throughout the network.
 By now this role installs a pre-configured cluster of rabbitmq's instances on GCP with a default user and the administration plugin.
 
 ## Architecture
-![alt text](https://github.com/skandertajine/rabbitmq-cluster/blob/master/architecture.png)
+![alt text](https://github.com/skandertajine/rabbitmq-cluster/bake/images/blob/master/architecture.png)
 ## Data persistancy 
 
 The node's exchange data is mirrored and real-time synchronized between the nodes so that in case of interruption (desired or not) of one or multiple nodes , it ( the data ) is always(SLA xx,xxx%) safly persisted in the remaning alive node.
@@ -29,7 +29,7 @@ rabbitmq_cluster_nodes  : ['rabbit@{{ rabbitmq_nodename }}-0'] #see 'Cluster con
   ### Cluster Security and authentification management
   
   The cluster nodes uses a cookie string to ensure authentification between each other.
-  The cookie will be typically located in /var/lib/rabbitmq/.erlang.cookie and it must be identical within all nodes.
+  The cookie will be typically located in ```/var/lib/rabbitmq/.erlang.cookie``` and it must be identical within all nodes.
   
  
   ### Cluster configuration schema
@@ -78,6 +78,6 @@ Use terraform plan and terraform apply in the Deploy directory in order to deplo
 Rabbitmq's management plugin is already installed accesible locally via the loadbalancing IP:15672.
 It will require credentials to login , use "rabbitmq_user" and "rabbitmq_password" precedently configured.
 
-![alt text](https://github.com/skandertajine/rabbitmq-cluster/blob/master/managementpluging.png)
+![alt text](https://github.com/skandertajine/rabbitmq-cluster/bake/images/blob/master/managementpluging.png)
 ## Troubleshooting
 Sometimes Rabbitmq(service rabbitmq-server ) doesn't want to start , it maybe sometimes caused by a wrong character in the cookie file.

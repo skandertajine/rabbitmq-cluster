@@ -81,23 +81,3 @@ It will require credentials to login , use "rabbitmq_user" and "rabbitmq_passwor
 ![alt text](https://github.com/skandertajine/rabbitmq-cluster/blob/master/managementpluging.png)
 ## Troubleshooting
 Sometimes Rabbitmq(service rabbitmq-server ) doesn't want to start , it maybe sometimes caused by a wrong character in the cookie file.
-## Built With
-* [Ansible](https://www.ansible.com) - Configuration Manager
-* [Terraform](https://www.terraform.io) - Infrastructure as code.
-* [GCP](https://rometools.github.io/rome/) - Cloud Platform deployed on.
-## Versioning
-## Authors
-
-* Skander Tajine - *Initial work* - [SkanderTajine](https://github.com/SkanderTajine)
-
-
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* This projected if forked from Micheleu et Johnatan "à terminer!!"
-
-

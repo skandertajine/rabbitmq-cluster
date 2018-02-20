@@ -12,8 +12,8 @@ The node's exchange data is mirrored and real-time synchronized between the node
 
 
 ## Getting Started
-# Configuration
-## Main configuration
+## Configuration
+### Main configuration
 ```yaml
 rabbitmq_user           : "@changeme@"
 rabbitmq_password       : "@changeme@"
@@ -26,16 +26,16 @@ item                    : "rabbitmq-server"
 
 rabbitmq_cluster_nodes  : ['rabbit@{{ rabbitmq_nodename }}-0'] #see 'Cluster configuration schema' for further information about clustering
 ```
-  ## Cluster Security and authentification management
+  ### Cluster Security and authentification management
   
   The cluster nodes uses a cookie string to ensure authentification between each other.
   The cookie will be typically located in /var/lib/rabbitmq/.erlang.cookie and it must be identical within all nodes.
   
  
-  ## Cluster configuration schema
+  ### Cluster configuration schema
  
  You can choose the number of clustered rabbitmq's nodes by changing the parameter below :
-### Schema :
+#### Schema :
 The parameter's configuration schema is :
 ```yaml
 rabbitmq_cluster_nodes  : "[
@@ -44,7 +44,7 @@ rabbitmq_cluster_nodes  : "[
                                'rabbit@{{ rabbitmq_nodename }}-ID',
                                ]" 
  ```   
-### Examples : 
+#### Examples : 
  
 - 3 Rabbitmq Nodes in cluster : 
  ```yaml     
@@ -78,13 +78,7 @@ Sometimes Rabbitmq(service rabbitmq-server ) doesn't want to start , it maybe so
 * [Ansible](https://www.ansible.com) - Configuration Manager
 * [Terraform](https://www.terraform.io) - Infrastructure as code.
 * [GCP](https://rometools.github.io/rome/) - Cloud Platform deployed on.
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
 ## Versioning
-
 ## Authors
 
 * Skander Tajine - *Initial work* - [SkanderTajine](https://github.com/SkanderTajine)
@@ -97,7 +91,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* This projected if forked from Micheleu et Johnatan "à terminer!!"
+
 

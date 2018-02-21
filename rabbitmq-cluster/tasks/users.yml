@@ -1,0 +1,11 @@
+- name: Add rabittmq user with full privilege
+  rabbitmq_user:
+    user: "{{ rabbitmq_user }}"
+    password: "{{ rabbitmq_password }}"
+    vhost: /
+    configure_priv: .*
+    read_priv: .*
+    write_priv: .*
+    tags : administrator
+    state: present
+

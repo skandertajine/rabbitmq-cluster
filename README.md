@@ -48,11 +48,11 @@ rabbitmq_cluster_nodes  : ['rabbit@{{ rabbitmq_nodename }}-0'] #see 'Cluster con
   The cookie will be typically located in ```/var/lib/rabbitmq/.erlang.cookie``` and it must be identical within all nodes.
   
  
-  ### Cluster configuration schema
+  ### Cluster configuration 
   File Location : /bake/localhost.yaml
  You can choose the number of clustered rabbitmq's nodes by changing the parameter below :
-#### Schema :
-The parameter's configuration schema is :
+#### Skeleton :
+The parameter's configuration skeleton is :
 ```yaml
 rabbitmq_cluster_nodes  : "[
                                'rabbit@{{ rabbitmq_nodename }}-ID',
@@ -85,7 +85,13 @@ rabbitmq_cluster_nodes  : "[
 Simple quotes also is required.
 Jinja adds a "u" symbol when double quotes " " cercling the [array] are missing. 
  ```
-## Running the tests
+## Benchmarks
+
+Theese benchmarks can help you to choose the correction configuration depending on your needs.
+Real time performances may differ depending on your situation (message size , nombre of consumers/producers..).
+In our case , in order to get ceiling results , tests have been made using one producer communicating with one consumer.
+![alt text](https://github.com/skandertajine/rabbitmq-cluster/blob/master/images/benchmark.png)
+
 ## Deployment.
 To do so we use Terraform to deploy the architecture.
 Use terraform plan and terraform apply in the Deploy directory in order to deploy the pre-configured infrastructure.

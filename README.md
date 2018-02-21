@@ -5,7 +5,7 @@ Rabbitmq is a message broker, used to share messages throughout the network.
 By now this role installs a pre-configured cluster of rabbitmq's instances on GCP with a default user and the administration plugin.
 
 The goal behind this repository is to create the bellow described architecture of a highly available rabbitmq cluster.
-Terraform creates the infrastructure on GCP and Ansible , locally ,configures the nodes by pulling this repository.
+Terraform creates the infrastructure on GCP and Ansible, locally, configures the nodes by pulling this repository.
 
 ## Architecture
 ![alt text](https://github.com/skandertajine/rabbitmq-cluster/blob/master/images/archi.png)
@@ -17,7 +17,7 @@ The node's exchange data is mirrored and real-time synchronized between the node
 ## Getting Started
 ## Configuration
 ### Infrastructure configuration
-File Location : /deploy/terraform.tfvars
+File Location : ``` /deploy/terraform.tfvars ```
 
 Change these values to customise your infrastructure.
 ```tfvars
@@ -32,7 +32,7 @@ firewall_project= "skale-5"
 ```
 
 ### Node configuration
-File Location : /bake/localhost.yaml
+File Location : ``` /bake/localhost.yaml ```
 ```yaml
 rabbitmq_user           : "@changeme@"
 rabbitmq_password       : "@changeme@"
@@ -43,16 +43,16 @@ rabbitmq_ip_adress      : "{{ ansible_eth0.ipv4.address }}"
 rabbitmq_node_port      : 5672
 item                    : "rabbitmq-server"
 
-rabbitmq_cluster_nodes  : ['rabbit@{{ rabbitmq_nodename }}-0'] #see 'Cluster configuration schema' for further information about clustering
+rabbitmq_cluster_nodes  : ['rabbit@{{ rabbitmq_nodename }}-0'] #see 'Cluster configuration skeleton' for further information about clustering
 ```
-  ### Cluster Security and authentification management
-  File Location : /bake/localhost.yaml
-  The cluster nodes uses a cookie string to ensure authentification to each other.
+  ### Cluster Security and authentication management
+  File Location : ``` /bake/localhost.yaml ```
+  The cluster nodes uses a cookie string to ensure authentication to each other.
   The cookie will be typically located in ```/var/lib/rabbitmq/.erlang.cookie``` and it must be identical within all nodes.
   
  
-  ### Cluster configuration 
-  File Location : /bake/localhost.yaml
+  ### Cluster configuration skeleton
+  File Location : ```  /bake/localhost.yaml ```
  You can choose the number of clustered rabbitmq's nodes by changing the parameter below :
 #### Skeleton :
 The parameter's configuration skeleton is :
@@ -91,8 +91,8 @@ Jinja adds a "u" symbol when double quotes " " cercling the [array] are missing.
 ## Benchmarks
 
 Theese benchmarks can help you to choose the correction configuration depending on your needs.
-Real time performances may differ depending on your situation (message size , nombre of consumers/producers..).
-In our case , in order to get ceiling results , tests have been made using one producer communicating with one consumer.
+Real time performances may differ depending on your situation (message size, nombre of consumers/producers..).
+In our case, in order to get ceiling results, tests have been made using one producer communicating with one consumer.
 ![alt text](https://github.com/skandertajine/rabbitmq-cluster/blob/master/images/benchmark.png)
 
 ## Deployment.
@@ -100,7 +100,7 @@ To do so we use Terraform to deploy the architecture.
 Use terraform plan and terraform apply in the Deploy directory in order to deploy the pre-configured infrastructure.
 ## Monitoring
 Rabbitmq's management plugin is already installed accesible locally via the loadbalancing IP:15672.
-It will require credentials to login , use "rabbitmq_user" and "rabbitmq_password" precedently configured.
+It will require credentials to login, use "rabbitmq_user" and "rabbitmq_password" precedently configured.
 
 ![alt text](https://github.com/skandertajine/rabbitmq-cluster/blob/master/images/managementpluging.png)
 ## Troubleshooting

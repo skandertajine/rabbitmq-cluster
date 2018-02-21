@@ -22,7 +22,7 @@ File Location : ``` /deploy/terraform.tfvars ```
 Change these values to customise your infrastructure.
 ```tfvars
 zone  = "europe-west1-c"
-count = 3 #This count has to be the same as the cluster nodes configuration below ( File Location : /bake/localhost.yaml)
+count = 3 #This count has to be the same as the cluster nodes configuration below ( File Location : /deploy/variables.tfvars)
 vm_type = "n1-standard-1"
 variable region = "europe-west1" 
 network = "default"
@@ -32,7 +32,7 @@ firewall_project= "skale-5"
 ```
 
 ### Node configuration:
-File Location: ``` /bake/localhost.yaml ```
+File Location: ``` localhost.yaml ```
 ```yaml
 rabbitmq_user           : "@changeme@"
 rabbitmq_password       : "@changeme@"
@@ -46,13 +46,13 @@ item                    : "rabbitmq-server"
 rabbitmq_cluster_nodes  : ['rabbit@{{ rabbitmq_nodename }}-0'] #see 'Cluster configuration skeleton' for further information about clustering
 ```
   ### Cluster Security and authentication management:
-  File Location : ``` /bake/localhost.yaml ```
+  File Location : ``` localhost.yaml ```
   The cluster nodes uses a cookie string to ensure authentication to each other.
   The cookie will be typically located in ```/var/lib/rabbitmq/.erlang.cookie``` and it must be identical within all nodes.
   
  
   ### Cluster configuration skeleton:
-  File Location : ```  /bake/localhost.yaml ```
+  File Location : ```  localhost.yaml ```
  You can choose the number of clustered rabbitmq's nodes by changing the parameter below :
 #### Skeleton:
 The parameter's configuration skeleton is :

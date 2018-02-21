@@ -92,7 +92,11 @@ Jinja adds a "u" symbol when double quotes " " cercling the [array] are missing.
 
 Theese benchmarks can help you to choose the ideal configuration depending on your needs.
 Real time performances may differ depending on your situation (message size, nombre of consumers/producers..).
-In our case, in order to get ceiling results, tests have been made using one producer communicating with one consumer.
+
+The speed given is the burst speed; Maximum number of messages you can send per second for your instance during a certain amount of time. Number of messages per second depends a lot on type of routing, size of messages, how many conumers/publishers you have, auto ack flags etc.
+
+
+
 ![alt text](https://github.com/skandertajine/rabbitmq-cluster/blob/master/images/benchmark.png)
 
 ## Deployment:
